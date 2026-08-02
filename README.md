@@ -1,74 +1,49 @@
-<<<<<<< HEAD
-##Como funciona
+# Gabriel Waltrich — Portfolio
 
-CI/CD Pipeline
+Portfolio pessoal desenvolvido como um projeto prático de estudos em **Cloud, Linux, Docker, Nginx, CI/CD e automação**.
 
-GitHub
+Além de apresentar meus projetos e links profissionais, este site também funciona como um laboratório real de infraestrutura, hospedado em uma máquina virtual na Oracle Cloud.
+
+---
+
+## 🚀 Sobre o projeto
+
+O objetivo deste projeto é reunir duas coisas:
+
+- apresentar meu perfil profissional;
+- aplicar na prática conceitos de infraestrutura e DevOps.
+
+O site é servido por um container Docker utilizando Nginx e está hospedado diretamente em uma VM na Oracle Cloud.
+
+A aplicação também consome dados públicos da API do GitHub para exibir automaticamente:
+
+- repositórios públicos;
+- quantidade de seguidores;
+- projetos atualizados recentemente;
+- atividades públicas recentes.
+
+---
+
+## 🧱 Arquitetura
+
+```text
+Usuário
    │
-   │ Push to main
    ▼
-GitHub Actions
+gabrielwaltrich.dev
    │
-   │ SSH
    ▼
-Oracle Cloud
+DNS - Name.com
    │
-   ├── Git pull/fetch
+   ▼
+Oracle Cloud VM
+Ubuntu Linux
    │
-   ├── Docker build
-   │
-   ├── Container replacement
-   │
-   └── Image cleanup
+   ▼
+Docker
    │
    ▼
 Nginx
    │
    ▼
-Portfolio
-=======
-# Portfolio — Gabriel Waltrich
-
-Portfólio estático, leve e pronto para Nginx/Docker.
-
-## Personalização obrigatória
-
-Abra `script.js` e altere:
-
-```js
-const CONFIG = {
-  githubUsername: "SEU_USUARIO_GITHUB",
-  linkedinUrl: "https://www.linkedin.com/in/SEU_PERFIL/",
-  maxProjects: 6,
-  maxEvents: 8
-};
-```
-
-## O que é automático
-
-- quantidade de repositórios públicos;
-- seguidores no GitHub;
-- repositórios públicos em destaque;
-- linguagem, stars, forks e última atualização;
-- últimas atividades públicas do GitHub.
-
-## LinkedIn
-
-O LinkedIn não possui uma API pública aberta que permita importar livremente toda a atividade
-de qualquer perfil. Por isso, o template usa um botão para o seu perfil. Se quiser, adicione
-manualmente uma seção com posts/artigos selecionados.
-
-## Arquivos
-
-- `index.html`
-- `style.css`
-- `script.js`
-
-Copie os três para a raiz do seu projeto atual e faça novo build do container.
-
-## Deploy
-
-```bash
-docker compose up -d --build
-```
->>>>>>> cc785d9 (Redesign do portfolio)
+Portfolio HTML / CSS / JavaScript
