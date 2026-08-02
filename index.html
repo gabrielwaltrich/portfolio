@@ -1,50 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio pessoal — Cloud, DevOps, Docker, Linux e automação." />
+  <meta name="theme-color" content="#090b10" />
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <meta property="og:title" content="Gabriel Waltrich — Cloud & DevOps" />
+  <meta property="og:description" content="Projetos, atividade pública no GitHub, estudos e infraestrutura." />
+  <meta property="og:type" content="website" />
 
-    <title>Meu Portfolio</title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+  <title>Gabriel Waltrich — Cloud & DevOps</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <div class="noise" aria-hidden="true"></div>
 
-    <main>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Ir ao início">
+      <span class="brand-mark">GW</span>
+      <span class="brand-text">gabriel<span>.dev</span></span>
+    </a>
 
-        <h1>Seu Nome</h1>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#atividade">Atividade</a>
+      <a href="#stack">Stack</a>
+    </nav>
 
-        <p>
-            Cloud | DevOps | Docker | Linux
-        </p>
+    <a class="button button-small button-ghost" data-linkedin href="#" target="_blank" rel="noreferrer">
+      LinkedIn
+    </a>
+  </header>
 
-        <div class="links">
-
-            <a
-                href="https://github.com/SEU-USUARIO"
-                target="_blank"
-            >
-                GitHub
-            </a>
-
-            <a
-                href="https://www.linkedin.com/in/SEU-USUARIO/"
-                target="_blank"
-            >
-                LinkedIn
-            </a>
-
+  <main>
+    <section id="inicio" class="hero section">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          <span>Construindo, aprendendo e documentando</span>
         </div>
 
-    </main>
+        <h1>
+          Infraestrutura simples.<br />
+          <span>Automação que funciona.</span>
+        </h1>
 
+        <p class="hero-lead">
+          Sou Gabriel Waltrich. Estou construindo experiência prática em
+          <strong>Cloud, Linux, Docker, CI/CD e automação</strong> através de projetos reais.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projetos">Ver projetos</a>
+          <a class="button button-ghost" data-github href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <span class="meta-label">Servidor</span>
+            <span class="meta-value">Oracle Cloud</span>
+          </div>
+          <div>
+            <span class="meta-label">Deploy</span>
+            <span class="meta-value">Docker + GitHub</span>
+          </div>
+          <div>
+            <span class="meta-label">HTTPS</span>
+            <span class="meta-value">Let's Encrypt</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="terminal-card" aria-label="Resumo da infraestrutura">
+        <div class="terminal-head">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span>portfolio@oracle:~</span>
+        </div>
+
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> cat stack.yml</p>
+          <pre><code>host: oracle-cloud
+os: ubuntu
+runtime: docker
+web: nginx:alpine
+tls: lets-encrypt
+deploy: github-actions
+status: <span class="terminal-ok">online</span></code></pre>
+
+          <p><span class="prompt">$</span> uptime</p>
+          <p class="terminal-muted">building practical experience...</p>
+          <span class="cursor" aria-hidden="true"></span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="section-heading">
+        <span class="section-kicker">01 / SOBRE</span>
+        <h2>Aprender fazendo.</h2>
+        <p>
+          Este próprio site faz parte do laboratório: domínio, DNS, Linux, Docker,
+          Nginx, TLS e deploy automatizado reunidos em um projeto pequeno e observável.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <article class="panel panel-large">
+          <span class="panel-label">AGORA</span>
+          <h3>Transformando estudo em infraestrutura real.</h3>
+          <p>
+            Em vez de apenas executar exemplos localmente, estou publicando projetos,
+            configurando servidores e registrando as decisões técnicas que tomei.
+          </p>
+
+          <div class="learning-list">
+            <span>Docker</span>
+            <span>Linux</span>
+            <span>Oracle Cloud</span>
+            <span>GitHub Actions</span>
+            <span>Nginx</span>
+            <span>Networking</span>
+          </div>
+        </article>
+
+        <article class="panel metric-card">
+          <span class="panel-label">GITHUB</span>
+          <strong id="repo-count">—</strong>
+          <span>repositórios públicos</span>
+        </article>
+
+        <article class="panel metric-card">
+          <span class="panel-label">FOLLOWERS</span>
+          <strong id="followers-count">—</strong>
+          <span>no GitHub</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="projetos" class="section">
+      <div class="section-heading section-heading-row">
+        <div>
+          <span class="section-kicker">02 / PROJETOS</span>
+          <h2>Projetos públicos.</h2>
+        </div>
+        <a class="text-link" data-github href="#" target="_blank" rel="noreferrer">Ver todos no GitHub ↗</a>
+      </div>
+
+      <div id="projects-grid" class="projects-grid" aria-live="polite">
+        <article class="project-card skeleton-card"></article>
+        <article class="project-card skeleton-card"></article>
+        <article class="project-card skeleton-card"></article>
+      </div>
+
+      <p id="projects-error" class="inline-message hidden"></p>
+    </section>
+
+    <section id="atividade" class="section">
+      <div class="section-heading">
+        <span class="section-kicker">03 / ATIVIDADE</span>
+        <h2>Últimas movimentações públicas.</h2>
+        <p>
+          Atividade pública carregada diretamente do GitHub. Assim, o portfólio acompanha
+          novos pushes, repositórios, releases e outras ações públicas sem você editar o HTML.
+        </p>
+      </div>
+
+      <div class="activity-layout">
+        <div id="activity-list" class="activity-list" aria-live="polite">
+          <div class="activity-item activity-loading">Carregando atividade do GitHub…</div>
+        </div>
+
+        <aside class="linkedin-card">
+          <span class="linkedin-badge">in</span>
+          <span class="panel-label">LINKEDIN</span>
+          <h3>Experiência, trajetória e networking.</h3>
+          <p>
+            O LinkedIn não oferece uma API pública aberta para importar automaticamente
+            toda a atividade de qualquer perfil. Por isso, o site direciona para o perfil
+            oficial e você pode destacar posts manualmente.
+          </p>
+          <a class="button button-primary" data-linkedin href="#" target="_blank" rel="noreferrer">
+            Abrir LinkedIn ↗
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="stack" class="section">
+      <div class="section-heading">
+        <span class="section-kicker">04 / STACK</span>
+        <h2>O que estou praticando.</h2>
+      </div>
+
+      <div class="stack-grid">
+        <article class="stack-item">
+          <span class="stack-index">01</span>
+          <div><strong>Cloud</strong><span>Oracle Cloud Infrastructure</span></div>
+        </article>
+        <article class="stack-item">
+          <span class="stack-index">02</span>
+          <div><strong>Containers</strong><span>Docker · Compose · Nginx</span></div>
+        </article>
+        <article class="stack-item">
+          <span class="stack-index">03</span>
+          <div><strong>Automation</strong><span>GitHub Actions · Shell</span></div>
+        </article>
+        <article class="stack-item">
+          <span class="stack-index">04</span>
+          <div><strong>Systems</strong><span>Linux · SSH · Networking</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section callout">
+      <div>
+        <span class="section-kicker">CONTATO</span>
+        <h2>Quer conversar sobre tecnologia?</h2>
+        <p>Me encontre no GitHub ou no LinkedIn.</p>
+      </div>
+      <div class="callout-actions">
+        <a class="button button-primary" data-linkedin href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a class="button button-ghost" data-github href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Gabriel Waltrich</span>
+    <span>Servido por Nginx em Docker · Oracle Cloud</span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
